@@ -23,6 +23,7 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  font-size: 24px;
 }
 
 label {
@@ -30,14 +31,16 @@ label {
   margin-top: 15px;
   margin-bottom: 5px;
   color: #333;
+  font-size: 16px;
 }
 
 input,
 select,
 button {
   width: 100%;
-  padding: 10px;
+  padding: 14px;
   margin-top: 3px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
@@ -55,19 +58,29 @@ button:hover {
   background-color: #004999;
 }
 
-/* Media query para pantallas pequeñas */
+/* Mejoras para pantallas pequeñas */
 @media (max-width: 480px) {
   body {
-    padding: 20px;
+    padding: 10px;
   }
 
   .form-container {
     padding: 20px;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  label {
+    font-size: 18px;
   }
 
   input,
   select,
   button {
-    font-size: 16px;
+    padding: 16px;
+    font-size: 18px;
   }
 }
