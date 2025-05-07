@@ -19,11 +19,14 @@ $cabeceras = "From: soporte@carlosperez.kesug.com\r\n";
 
 if (mail($correo, $asunto, $mensaje, $cabeceras)) {
     echo "<h2>✅ Código enviado al correo: $correo</h2>";
-    echo '<form action="validar.php" method="POST">
-            <label for="codigo">Ingresa el código recibido:</label>
-            <input type="text" id="codigo" name="codigo" required>
-            <button type="submit">Validar código</button>
-          </form>';
+    echo '<link rel="stylesheet" href="validar.css">';
+    echo '<div class="validation-container">
+            <h2>Validar Código de Confirmación</h2>
+            <form action="validar.php" method="POST">
+            <input type="text" name="codigo" placeholder="Código recibido" required>
+            <button type="submit">Validar</button>
+            </form>
+        </div>';
 } else {
     echo "<h2>❌ Error al enviar el correo. Intenta más tarde.</h2>";
 }
