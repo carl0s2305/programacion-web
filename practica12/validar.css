@@ -17,9 +17,10 @@ body {
 
 .message {
   font-size: 18px;
-  padding: 10px;
-  margin-top: 15px;
+  padding: 12px;
   border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .success {
