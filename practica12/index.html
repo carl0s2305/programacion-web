@@ -13,33 +13,41 @@
       <fieldset>
         <legend>Datos del Estudiante</legend>
 
-        <label for="nombre">Nombre completo:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <div class="input-group">
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
+        <div class="input-group">
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" minlength="6" required>
+        <div class="input-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
       </fieldset>
 
       <fieldset>
         <legend>Curso a Inscribirse</legend>
 
-        <label for="curso">Selecciona un curso:</label>
-        <select id="curso" name="curso" required>
-          <option value="" disabled selected>Elige una opción</option>
-          <option value="Python">Curso de Python</option>
-          <option value="Desarrollo Web">Desarrollo Web Full Stack</option>
-          <option value="Inteligencia Artificial">Inteligencia Artificial con Python</option>
-          <option value="Ciberseguridad">Fundamentos de Ciberseguridad</option>
-          <option value="SQL y Bases de Datos">SQL y Bases de Datos</option>
-          <option value="Desarrollo Android">Desarrollo de Apps Android con Java</option>
-          <option value="Diseño UX/UI">Diseño UX/UI para Principiantes</option>
-          <option value="Redes Cisco">Redes y Configuración con Cisco</option>
-          <option value="Git y GitHub">Control de Versiones con Git y GitHub</option>
-          <option value="Machine Learning">Introducción al Machine Learning</option>
-        </select>
+        <div class="input-group">
+          <label for="curso">Selecciona un curso:</label>
+          <select id="curso" name="curso" required>
+            <option value="" disabled selected>Elige una opción</option>
+            <option value="Python">Curso de Python</option>
+            <option value="Desarrollo Web">Desarrollo Web Full Stack</option>
+            <option value="Inteligencia Artificial">Inteligencia Artificial</option>
+            <option value="Ciberseguridad">Ciberseguridad</option>
+            <option value="SQL">SQL y Bases de Datos</option>
+            <option value="Android">Apps Android con Java</option>
+            <option value="UX/UI">Diseño UX/UI</option>
+            <option value="Redes">Redes Cisco</option>
+            <option value="Git">Git y GitHub</option>
+            <option value="ML">Machine Learning</option>
+          </select>
+        </div>
       </fieldset>
 
       <button type="submit">Inscribirse</button>
