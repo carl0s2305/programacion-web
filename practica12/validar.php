@@ -4,7 +4,7 @@ echo '<link rel="stylesheet" href="validar.css">';
 echo '<div class="validation-container">';
 
 if (!isset($_SESSION['codigo']) || !isset($_POST['codigo_ingresado'])) {
-    echo '<div class="message error">❌ Sesión inválida o formulario incompleto.</div>';
+    echo '<div class="message error">Sesión inválida o formulario incompleto.</div>';
     echo '<a href="index.html">Volver</a></div>';
     exit;
 }
@@ -29,13 +29,40 @@ if ($codigo_ingresado == $codigo_correcto) {
 
     if ($stmt->execute()) {
         echo '<div class="message success">✅ ¡Registro exitoso! Código correcto y datos guardados.</div>';
+
+        // MOSTRAR TODOS LOS REGISTROS DE LA TABLA
+        $query = "SELECT id_usuario, nombre_completo, correo, codigo FROM usuarios";
+        $result = $conn->query($query);
+
+        if ($result->num_rows > 0) {
+            echo '<h2 style="margin-top: 20px;">Todos los usuarios registrados</h2>';
+            echo '<table style="width:100%; border-collapse: collapse; margin-top:10px;">';
+            echo '<tr>
+                    <th style="border: 1px solid #ccc; padding: 8px;">ID</th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Nombre</th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Correo</th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Código</th>
+                  </tr>';
+
+            while ($row = $result->fetch_assoc()) {
+                echo '<tr>
+                        <td style="border: 1px solid #ccc; padding: 8px;">' . $row['id_usuario'] . '</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">' . htmlspecialchars($row['nombre_completo']) . '</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">' . htmlspecialchars($row['correo']) . '</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">' . htmlspecialchars($row['codigo']) . '</td>
+                      </tr>';
+            }
+
+            echo '</table>';
+        } else {
+            echo '<div class="message error">⚠️ No hay registros en la base de datos.</div>';
+        }
     } else {
         echo '<div class="message error">❌ Error al guardar: ' . $stmt->error . '</div>';
     }
 
     $stmt->close();
     $conn->close();
-
     session_unset();
     session_destroy();
 } else {
