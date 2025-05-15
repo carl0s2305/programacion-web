@@ -42,6 +42,6 @@ if (mail($correo, $asunto, $mensaje, $cabeceras)) {
             </form>
           </div>';
 } else {
-    echo "<h2>Error al enviar el correo.</h2>";
+    echo "<h2>Error al intentar enviar el correo.</h2>";
 }
 ?>
