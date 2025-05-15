@@ -18,8 +18,8 @@ body {
 }
 
 /* CONTENEDOR PRINCIPAL */
-.form-container,
-.validation-container {
+.contenedor-formulario,
+.validacion-contenedor {
   background-color: #fff;
   padding: 35px 40px;
   max-width: 600px;
@@ -100,7 +100,7 @@ button:hover {
 }
 
 /* MENSAJES DE VALIDACIÓN */
-.message {
+.mensaje {
   padding: 14px;
   font-size: 15px;
   border-radius: 8px;
@@ -109,7 +109,7 @@ button:hover {
   font-weight: 500;
 }
 
-.success {
+.exito {
   background-color: #e1f5e9;
   color: #1b5e20;
   border: 1px solid #a5d6a7;
@@ -179,7 +179,8 @@ a:hover {
   text-decoration: underline;
 }
 
-.input-group {
+/* GRUPOS DE CAMPOS */
+.grupo-campo {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;

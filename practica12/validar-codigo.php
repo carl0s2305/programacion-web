@@ -1,6 +1,6 @@
 <?php
 session_start();
-echo '<link rel="stylesheet" href="styles.css">';
+echo '<link rel="stylesheet" href="estilos.css">';
 echo '<div class="validation-container">';
 
 if (!isset($_SESSION['codigo']) || !isset($_POST['codigo_ingresado'])) {

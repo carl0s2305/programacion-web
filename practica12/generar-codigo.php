@@ -15,7 +15,7 @@ function generarCodigo($longitud = 5) {
     return $codigo;
 }
 
-$codigo = generarCodigo(); // ejemplo: AH1S3
+$codigo = generarCodigo();
 
 
 // Guardar en sesión
@@ -33,10 +33,10 @@ $cabeceras = "From: soporte@carlosperez.kesug.com\r\n";
 
 if (mail($correo, $asunto, $mensaje, $cabeceras)) {
     echo "<h2>Código enviado al correo: $correo</h2>";
-    echo '<link rel="stylesheet" href="styles.css">';
+    echo '<link rel="stylesheet" href="estilos.css">';
     echo '<div class="validation-container">
             <h2>Validar Código de Confirmación</h2>
-            <form action="validar.php" method="POST">
+            <form action="validar-codigo.php" method="POST">
                 <input type="text" name="codigo_ingresado" placeholder="Código recibido" required>
                 <button type="submit">Validar</button>
             </form>
