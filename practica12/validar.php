@@ -15,7 +15,7 @@ $codigo_correcto  = $_SESSION['codigo'];
 if ($codigo_ingresado == $codigo_correcto) {
     $conn = new mysqli("localhost", "carlosperez_carlos", "pyAh2305", "carlosperez_test");
     if ($conn->connect_error) {
-        echo '<div class="message error">❌ Error de conexión: ' . $conn->connect_error . '</div>';
+        echo '<div class="message error">Error de conexión: ' . $conn->connect_error . '</div>';
         exit;
     }
 
@@ -28,7 +28,7 @@ if ($codigo_ingresado == $codigo_correcto) {
     $stmt->bind_param("ssis", $nombre, $correo, $codigo_correcto, $password);
 
     if ($stmt->execute()) {
-        echo '<div class="message success">✅ ¡Registro exitoso! Código correcto y datos guardados.</div>';
+        echo '<div class="message success">¡Registro exitoso! Código correcto y datos guardados.</div>';
 
         // MOSTRAR TODOS LOS REGISTROS DE LA TABLA
         $query = "SELECT id_usuario, nombre_completo, correo, codigo FROM usuarios";
@@ -55,10 +55,10 @@ if ($codigo_ingresado == $codigo_correcto) {
 
             echo '</table>';
         } else {
-            echo '<div class="message error">⚠️ No hay registros en la base de datos.</div>';
+            echo '<div class="message error">No hay registros en la base de datos.</div>';
         }
     } else {
-        echo '<div class="message error">❌ Error al guardar: ' . $stmt->error . '</div>';
+        echo '<div class="message error">Error al guardar: ' . $stmt->error . '</div>';
     }
 
     $stmt->close();
@@ -66,7 +66,7 @@ if ($codigo_ingresado == $codigo_correcto) {
     session_unset();
     session_destroy();
 } else {
-    echo '<div class="message error">❌ Código incorrecto. Intenta nuevamente.</div>';
+    echo '<div class="message error">Código incorrecto. Intenta nuevamente.</div>';
 }
 
 echo '<a href="index.html">Volver al inicio</a></div>';
