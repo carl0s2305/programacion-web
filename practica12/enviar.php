@@ -5,7 +5,18 @@ $nombre    = $_POST['nombre'] ?? '';
 $correo    = $_POST['correo'] ?? '';
 $curso     = $_POST['curso'] ?? '';
 $password  = $_POST['password'] ?? '';
-$codigo    = rand(10000, 99999);
+
+function generarCodigo($longitud = 5) {
+    $caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $codigo = '';
+    for ($i = 0; $i < $longitud; $i++) {
+        $codigo .= $caracteres[random_int(0, strlen($caracteres) - 1)];
+    }
+    return $codigo;
+}
+
+$codigo = generarCodigo(); // ejemplo: AH1S3
+
 
 // Guardar en sesión
 $_SESSION['nombre']   = $nombre;
