@@ -124,24 +124,45 @@ button:hover {
 /* TABLA */
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
   font-size: 14px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
+  padding: 12px 14px;
   text-align: center;
+  border-bottom: 1px solid #eee;
+  word-break: break-word;
 }
 
 th {
   background-color: #8b5cf6;
   color: white;
+  font-weight: 600;
 }
 
 tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td:first-child, th:first-child {
+  border-left: none;
+}
+
+td:last-child, th:last-child {
+  border-right: none;
 }
 
 /* ENLACES */
@@ -163,3 +184,4 @@ a:hover {
   flex-direction: column;
   margin-bottom: 15px;
 }
+
